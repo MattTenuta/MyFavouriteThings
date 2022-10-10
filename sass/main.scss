@@ -1,0 +1,19 @@
+@import "./modules/reset";
+@import "./modules/vars";
+
+
+body {
+    font-size: 16px;
+
+    background-color: black
+}
+
+@import "./modules/defaults.scss";
+
+@import "./modules/queries.scss";
+
+// this is a valid sass comment
+
+@import "./modules/_header.scss";
+@import "./modules/_main.scss";
+@import "./modules/_footer.scss";
