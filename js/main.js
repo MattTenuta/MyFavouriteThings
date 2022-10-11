@@ -11,7 +11,9 @@ import { getData } from "./modules/dataMiner.js";
     let theTemplate = document.querySelector("#user-template").content,
         theTeam = document.querySelector(".team-section"),
         lightbox = document.querySelector("#lightbox"),
-        buttonImg = document.querySelector("#cookingImg");
+        cookImg = document.querySelector("#cookingImg"),
+        vacaImg = document.querySelector("#travelImg"),
+        gamerImg = document.querySelector("#gameImg");
 
     function changeCopy(profs) {
         //parse the top level props from the profs object (the prof names)
@@ -40,15 +42,23 @@ import { getData } from "./modules/dataMiner.js";
         }
     }
 
+    function removeLightbox() {
+        lightbox.classList.remove("show-lightbox");
+    }
+
     function showBox() {
         childChecker();
 
         lightbox.classList.add("show-lightbox");
-        debugger;
+
+        lightbox.addEventListener("click", removeLightbox);
     }
 
     // retrieve our prof data, and then build out the content
     getData('./data.json', changeCopy);
 
-    buttonImg.addEventListener("click", showBox());
+    cookImg.addEventListener("click", showBox);
+    vacaImg.addEventListener("click", showBox);
+    gamerImg.addEventListener("click", showBox);
+
 })();
