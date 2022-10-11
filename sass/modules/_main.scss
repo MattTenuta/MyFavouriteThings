@@ -1,8 +1,74 @@
-main { background-color: rgb(6, 255, 118);
-    
-    h1 { color: rgb(31, 31, 121); }
+main {
 
-    article { background-color: rgb(238, 47, 79);
-        aside { color: rgb(44, 239, 86); }
+    background-color: antiquewhite;
+
+    h1 {
+    display: flex;
+    margin: auto;
+    color: black;
+    justify-content: center;
+    font-size: 2em;
+    padding: .5em;
     }
+   
+
+    h2 {
+        display: flex;
+        margin: auto;
+        color: black;
+        justify-content: center;
+        font-size: 2em;
+        padding: .5em 0 1em 0;
+    }
+
+    h3 {
+        display: flex;
+        margin: auto;
+        color: black;
+        justify-content: center;
+        font-size: 2em;
+        padding-bottom: 2em;
+    }
+
+    article {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        color: black;
+        padding: .5em;
+    }
+
+    img {
+        width: 1506px;
+        height: 550px;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        padding: 1em;
+    
+        &:hover {
+            cursor: pointer;
+            border-radius: 3em;
+            opacity: 50%;
+        }
+    }
+
+    #lightbox {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        display: none;
+    }
+
+    #lightbox.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .show-lightbox { display: block !important; }
+
 }

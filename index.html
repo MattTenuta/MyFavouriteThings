@@ -6,22 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     
-    <title>Learning Sass</title>
+    <title>Matthew's Favourite Things</title>
 
 
 </head>
 <body>
     <main class="main">
+        <section>
+            <h1>My Favourite Things</h1>
+            <h2> By: Matt Tenuta </h2>
+        </section>
+
+
         <section class="team-section">
             <!-- dynamic content gets injected here -->
         </section>
 
-        <section class="chuck-jokes">
-            <h2>Enjoy this hilarious Chuck Norris joke!</h2>
-            <h3 class="joke-text"></h3>
-            
-            <button id="get-joke">Can I Haz Joke</button>
+        <section>
+            <img id="cookingImg" class="getHobby" type="image" name="cooking_1" src="/images/cooking_1.jpg">
+            <img class="getHobby" type="image" name="travel_1" src="/images/travel_1.jpg">
+            <img class="getHobby" type="image" name="games_1" src="/images/games_1.jpg">
         </section>
+
+        <div id="lightbox" class></div>
+
     </main>
 
     <!-- templates dont get rendered, but their content will be -->
@@ -30,12 +38,12 @@
             <div> <!-- container 0 -->
                 <img src="" alt="prof image">
             </div>
-        <h1 class="user-name">My super awesome app</h1> <!-- container 1 -->
-        <article class="user-desc">
-            This is the article
-            <aside>
-                Some text here
-            </aside>
+        <h2 class="user-name">My super awesome app</h2> <!-- container 1 -->
+        <article> <!-- container 2 -->
+            <h2></h2>
+        </article>
+        <article> <!-- container 3 -->
+            <p></p>
         </article>
         </section>
     </template>
