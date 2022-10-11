@@ -1,7 +1,6 @@
 //imports go at the top of JS
 import { getData } from "./modules/dataMiner.js";
 
-
 (() => {
     console.log('fired');
 
@@ -10,7 +9,9 @@ import { getData } from "./modules/dataMiner.js";
     //get a referemce to the tempalates contents and target the container
     //into which we will clone a copy of the markup
     let theTemplate = document.querySelector("#user-template").content,
-        theTeam = document.querySelector(".team-section");
+        theTeam = document.querySelector(".team-section"),
+        lightbox = document.querySelector("#lightbox"),
+        buttonImg = document.querySelector("#cookingImg");
 
     function changeCopy(profs) {
         //parse the top level props from the profs object (the prof names)
@@ -21,10 +22,11 @@ import { getData } from "./modules/dataMiner.js";
             let panel = theTemplate.cloneNode(true),
                 containers = panel.firstElementChild.children; //the section tags contents
                 // put the prof data where it needs to go
-                containers[0].querySelector('img').src = `images/${profs[prof].biopic}`;
+                containers[0].querySelector('img').src = `images/${profs[prof].hobbyPic}`;
 
-                containers[1].textContent = profs[prof].name;
-                containers[2].textContent = profs[prof].role;
+                containers[1].textContent = profs[prof].title;
+                containers[2].textContent = profs[prof].subheading;
+                containers[3].textContent = profs[prof].text;
 
                 // paste the prof markup into the team selection on the page
                 theTeam.appendChild(panel);
@@ -32,20 +34,21 @@ import { getData } from "./modules/dataMiner.js";
         })
     }
 
-    function showJoke(data) {
-        // show the random Chuck Norris joke in the UI
-        let theJoke = document.querySelector('.joke-text');
-
-        theJoke.textContent = data.value;
+    function childChecker() {
+        if(lightbox.classList > 1) {
+            lightbox.classList.remove("show-lightbox");
+        }
     }
 
-    function retrieveJoke() {
-        getData(`https://api.chucknorris.io/jokes/random`, showJoke)
-    }
-    let jokeButton = document.querySelector('#get-joke');
+    function showBox() {
+        childChecker();
 
-    jokeButton.addEventListener('click', retrieveJoke);
+        lightbox.classList.add("show-lightbox");
+        debugger;
+    }
+
     // retrieve our prof data, and then build out the content
     getData('./data.json', changeCopy);
-    getData(`https://api.chucknorris.io/jokes/random`, showJoke)
+
+    buttonImg.addEventListener("click", showBox());
 })();

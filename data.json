@@ -1,32 +1,20 @@
 {
-    "Justin": {
-        "name":"Justin",
-        "role":"Coordinator",
-        "nickname":"i don't know",
-        "biopic":"justin.jpg"
+    "Cooking": {
+        "title":"Cooking",
+        "subheading":"Cooking SubHeading",
+        "text":"Cooking Text Here",
+        "hobbyPic":"cooking_1.jpg"
     },
-    "John": {
-        "name":"John",
-        "role":"super chill prof",
-        "nickname":"just john",
-        "biopic":"john.jpg"
+    "Travel": {
+        "title":"Travelling",
+        "subheading":"Travel SubHeading",
+        "text":"Travel Text Here",
+        "hobbyPic":"travel_1.jpg"
     },
-    "Joe": {
-        "name":"Joe",
-        "role":"Prof",
-        "nickname":"Teddy Bear",
-        "biopic":"joe.jpg"
-    },
-    "Jarrod": {
-        "name":"Jarrod",
-        "role":"Design Superstar",
-        "nickname":"Zoolander",
-        "biopic":"jarrod.jpg"
-    },
-    "Trevor": {
-        "name":"Trevor",
-        "role":"Dark Arts Prof",
-        "nickname":"T Dazzle",
-        "biopic":"trevor.jpg"
+    "Games": {
+        "title":"Video Games",
+        "subheading":"Games SubHeading Here",
+        "text":"Games Text Here",
+        "hobbyPic":"games_1.jpg"
     }
   }
