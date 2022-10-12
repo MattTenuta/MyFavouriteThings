@@ -3,18 +3,18 @@
         "title":"Cooking",
         "subheading":"Cooking SubHeading",
         "text":"Cooking Text Here",
-        "hobbyPic":"cooking_1.jpg"
+        "hobbyPic":"cooking_2.jpg"
     },
     "Travel": {
         "title":"Travelling",
         "subheading":"Travel SubHeading",
         "text":"Travel Text Here",
-        "hobbyPic":"travel_1.jpg"
+        "hobbyPic":"travel_2.jpg"
     },
     "Games": {
         "title":"Video Games",
         "subheading":"Games SubHeading Here",
         "text":"Games Text Here",
-        "hobbyPic":"games_1.jpg"
+        "hobbyPic":"games_2.jpg"
     }
   }
