@@ -38,7 +38,7 @@ main {
         padding: .5em;
     }
 
-    img {
+    section img {
         width: 1506px;
         height: 550px;
         display: flex;
@@ -66,4 +66,9 @@ main {
     .show-lightbox { display: block;
      }
 
+     div img {
+        margin: auto;
+        justify-content: center;
+
+     }
 }
