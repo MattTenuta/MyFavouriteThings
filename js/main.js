@@ -75,6 +75,7 @@ import { getData } from "./modules/dataMiner.js";
     }
 
     getData('./data.json', buildThings);
+    
 
 
     cookImg.addEventListener("click", showThing);
