@@ -6,57 +6,79 @@ import { getData } from "./modules/dataMiner.js";
 
     
     let theTemplate = document.querySelector("#user-template").content,
-        theTeam = document.querySelector(".team-section"),
+        theThings = document.querySelector("#team-section"),
+        faveData,
         lightbox = document.querySelector("#lightbox"),
-        cookImg = document.querySelector("#cookingImg"),
-        vacaImg = document.querySelector("#travelImg"),
-        gamerImg = document.querySelector("#gameImg");
+        cookImg = document.querySelector("#Cooking"),
+        vacaImg = document.querySelector("#Travel"),
+        gamerImg = document.querySelector("#Games");
         
 
-    function changeCopy(hobbies) {
+    function buildThings(data) {
+        debugger;
 
-        let theHobbies = Object.keys(hobbies);
+        faveData = data;
+
+        const things = Object.keys(data);
         
-        theHobbies.forEach(hobby =>{
+        things.forEach(thing =>{
 
-            let panel = theTemplate.cloneNode(true),
-                containers = panel.firstElementChild.children;
+            let panel = theTemplate.cloneNode(true);
 
-                containers[0].querySelector('img').src = `images/${hobbies[hobby].hobbyPic}`;
+            let containers = panel.firstElementChild.children;
 
-                containers[1].textContent = hobbies[hobby].title;
-                containers[2].textContent = hobbies[hobby].subheading;
-                containers[3].textContent = hobbies[hobby].text;
+                containers[0].querySelector('img').src = `images/${data[thing].hobbyPic}`;
 
 
-                theTeam.appendChild(panel);
+                containers[0].querySelector('img').id = thing;
+                containers[0].querySelector('img').addEventListener('click', showThing);
+
+                containers[1].textContent = data[thing].title;
+                containers[2].textContent = data[thing].subheading;
+                containers[3].textContent = data[thing].text;
+
+
+                theThings.appendChild(panel);
                 
         })
     }
 
-    function childChecker() {
-        if(lightbox.classList > 1) {
-            lightbox.classList.remove("show-lightbox");
-        }
-    }
+   // function childChecker() {
+    //    if(lightbox.classList > 1) {
+     //       lightbox.classList.remove("show-lightbox");
+      //  }
+   // }
 
-    function removeLightbox() {
-        lightbox.classList.remove("show-lightbox");
-    }
+   // function removeLightbox() {
+     //   lightbox.classList.remove("show-lightbox");
+   // }
 
-    function showBox() {
-        childChecker();
+   // function showBox() {
+     //   childChecker();
+
+     //   lightbox.classList.add("show-lightbox");
+    //}
+
+    function showThing() {
+        debugger;
+
+        let currentThing = faveData[this.id];
+
+        hobbyIMG = lightbox.getElementsByClassName("IMG")[this.id];
+        headText = lightbox.getElementsByClassName("head")[this.id];
+
+        headText.append(currentThing);
+        hobbyIMG.src = `images/${currentThing.hobbyPic}`
 
         lightbox.classList.add("show-lightbox");
 
-        lightbox.addEventListener("click", removeLightbox);
     }
 
+    getData('./data.json', buildThings);
 
-    getData('./data.json', changeCopy);
 
-    cookImg.addEventListener("click", showBox);
-    vacaImg.addEventListener("click", showBox);
-    gamerImg.addEventListener("click", showBox);
+    cookImg.addEventListener("click", showThing);
+    vacaImg.addEventListener("click", showThing);
+    gamerImg.addEventListener("click", showThing);
 
 })();
