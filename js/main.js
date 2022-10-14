@@ -11,6 +11,7 @@ import { getData } from "./modules/dataMiner.js";
         cookImg = document.querySelector("#cookingImg"),
         vacaImg = document.querySelector("#travelImg"),
         gamerImg = document.querySelector("#gameImg");
+        
 
     function changeCopy(hobbies) {
 
