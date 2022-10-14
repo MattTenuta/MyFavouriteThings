@@ -6,79 +6,79 @@ import { getData } from "./modules/dataMiner.js";
 
     
     let theTemplate = document.querySelector("#user-template").content,
-        theTeam = document.querySelector(".team-section"),
+        theThings = document.querySelector("#team-section"),
+        faveData,
         lightbox = document.querySelector("#lightbox"),
         cookImg = document.querySelector("#Cooking"),
         vacaImg = document.querySelector("#Travel"),
         gamerImg = document.querySelector("#Games");
         
 
-    function changeCopy(hobbies) {
+    function buildThings(data) {
+        debugger;
 
-        let theHobbies = Object.keys(hobbies);
+        faveData = data;
+
+        const things = Object.keys(data);
         
-        theHobbies.forEach(hobby =>{
+        things.forEach(thing =>{
 
-            let panel = theTemplate.cloneNode(true),
-                containers = panel.firstElementChild.children,
-                theMainImg = containers[0].querySelector('img');
+            let panel = theTemplate.cloneNode(true);
 
-                theMainImg.src = `images/${hobbies[hobby].activeThing}`;
-                theMainImg.dataset.key = hobby;
+            let containers = panel.firstElementChild.children;
 
-                theMainImg.addEventListener('click', function(hobby) {
-                    createLightBoxContent(hobbies[hobby.target,dataset.key]);
-                })
-
-                containers[1].textContent = hobbies[hobby].title;
-                containers[2].textContent = hobbies[hobby].subheading;
-                containers[3].textContent = hobbies[hobby].text;
+                containers[0].querySelector('img').src = `images/${data[thing].hobbyPic}`;
 
 
-                theTeam.appendChild(panel);
+                containers[0].querySelector('img').id = thing;
+                containers[0].querySelector('img').addEventListener('click', showThing);
+
+                containers[1].textContent = data[thing].title;
+                containers[2].textContent = data[thing].subheading;
+                containers[3].textContent = data[thing].text;
+
+
+                theThings.appendChild(panel);
                 
         })
     }
 
-    function createLightBoxContent(hobby) {
+   // function childChecker() {
+    //    if(lightbox.classList > 1) {
+     //       lightbox.classList.remove("show-lightbox");
+      //  }
+   // }
+
+   // function removeLightbox() {
+     //   lightbox.classList.remove("show-lightbox");
+   // }
+
+   // function showBox() {
+     //   childChecker();
+
+     //   lightbox.classList.add("show-lightbox");
+    //}
+
+    function showThing() {
         debugger;
 
-        activeThing = faveData[this.id];
+        let currentThing = faveData[this.id];
 
-        //retrieve the lightbox, change its content with data, show it
+        hobbyIMG = lightbox.getElementsByClassName("IMG")[this.id];
+        headText = lightbox.getElementsByClassName("head")[this.id];
 
-        let lightbox = document.querySelector('#lightbox');
-        lightbox.classList.add('show-lightbox');
-
-        lightbox.querySelector('img').src = hobby.hobbyPic
-    }
-
-    function childChecker() {
-        if(lightbox.classList > 1) {
-            lightbox.classList.remove("show-lightbox");
-        }
-    }
-
-
-    function removeLightbox() {
-        lightbox.classList.remove("show-lightbox");
-    }
-
-    function showBox(hobby) {
-        childChecker();
+        headText.append(currentThing);
+        hobbyIMG.src = `images/${currentThing.hobbyPic}`
 
         lightbox.classList.add("show-lightbox");
 
-        lightbox.addEventListener("click", removeLightbox);
     }
 
-    mainImages.forEach(image => image.addEventListener('click', createLightBoxContent));
+    getData('./data.json', buildThings);
 
 
-    getData('./data.json', changeCopy);
-
-    cookImg.addEventListener("click", showBox);
-    vacaImg.addEventListener("click", showBox);
-    gamerImg.addEventListener("click", showBox);
+    cookImg.addEventListener("click", showThing);
+    vacaImg.addEventListener("click", showThing);
+    gamerImg.addEventListener("click", showThing);
 
 })();
