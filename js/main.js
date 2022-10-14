@@ -8,16 +8,14 @@ import { getData } from "./modules/dataMiner.js";
     let theTemplate = document.querySelector("#user-template").content,
         theTeam = document.querySelector(".team-section"),
         lightbox = document.querySelector("#lightbox"),
-        cookImg = document.querySelector("#cookingImg"),
-        vacaImg = document.querySelector("#travelImg"),
-        mainImages = document.querySelector("#whateverWant"),
-        gamerImg = document.querySelector("#gameImg");
+        cookImg = document.querySelector("#Cooking"),
+        vacaImg = document.querySelector("#Travel"),
+        gamerImg = document.querySelector("#Games");
         
 
     function changeCopy(hobbies) {
 
         let theHobbies = Object.keys(hobbies);
-        faveData = hobbies;
         
         theHobbies.forEach(hobby =>{
 
