@@ -1,9 +1,9 @@
-function getData(targeturl, callback) {
-    console.log('fired from the data miner module')
+function getData(targetURL, callback) {
+    console.log('fired from the data miner module');
 
     // fetch is a JS API that runs AJAX requests
     // and gets data from a resource
-    fetch(targeturl) //pass in the path to the data source
+    fetch(targetURL) //pass in the path to the data source
         .then(res => res.json()) //convert JSON to plain JS object
         // the res is in the data that we are retrieving from the resource
         .then(data => { // data is the converted JSON object -> now its just data (JS object)
@@ -13,7 +13,7 @@ function getData(targeturl, callback) {
             // this gets passed in by reference when we invoke the dataMiner in main.js
             callback(data);
         })
-    .catch(error => console.error(error)); // catch any errors that might happen and report them to the dev
+    .catch(error => console.log(error)); // catch any errors that might happen and report them to the dev
 }
 
 export { getData }
