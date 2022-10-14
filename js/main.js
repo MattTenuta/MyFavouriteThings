@@ -6,11 +6,11 @@ import { getData } from "./modules/dataMiner.js";
 
     
     let theTemplate = document.querySelector("#user-template").content,
-        theTeam = document.querySelector(".team-section"),
+        theTeam = document.querySelector("#team-section"),
         lightbox = document.querySelector("#lightbox"),
-        cookImg = document.querySelector("#cookingImg"),
-        vacaImg = document.querySelector("#travelImg"),
-        gamerImg = document.querySelector("#gameImg");
+        cookImg = document.querySelector("#Cooking"),
+        vacaImg = document.querySelector("#Travel"),
+        gamerImg = document.querySelector("#Games");
         
 
     function changeCopy(hobbies) {
@@ -52,11 +52,25 @@ import { getData } from "./modules/dataMiner.js";
         lightbox.addEventListener("click", removeLightbox);
     }
 
+    function showCookingData() {
+        getData('./data.json', changeCopy);
+    }
 
-    getData('./data.json', changeCopy);
+    function showTravelData() {
+        getData('./data1.json', changeCopy);
+    }
 
+    function showGamesData() {
+        getData('./data2.json', changeCopy);
+    }
+
+    cookImg,addEventListener('click', showCookingData);
     cookImg.addEventListener("click", showBox);
+
+    vacaImg.addEventListener("click", showTravelData);
     vacaImg.addEventListener("click", showBox);
+
+    gamerImg.addEventListener("click", showGamesData);
     gamerImg.addEventListener("click", showBox);
 
 })();
