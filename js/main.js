@@ -11,6 +11,11 @@ import { getData } from "./modules/dataMiner.js";
         duration: 5
     })
 
+    gsap.from(".getHobby2", { 
+        x: 2000,
+        duration: 5
+    })
+
     gsap.from(".header", {
         y: -200,
         duration: 2

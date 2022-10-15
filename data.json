@@ -1,20 +1,20 @@
 {
     "Cooking": {
         "title":"Cooking",
-        "subheading":"Cooking SubHeading",
-        "text":"Cooking Text Here",
+        "subheading":"I am no MasterChef, but I do really love to cook",
+        "text":"Cooking has always been a side hobby of mine. From a young age I took cooking classes at our local Arts & Cookery Bank and have loved cooking ever since. The feeling of taking a bunch of ingredients and creating something tasty just makes me so happy and I love it. The only bad part is cleaning the mess after. Some of my favourite foods include: Crème Brulee, Pasta (have to add that or my Italian family members would kill me), and Stuffed Mushrooms.",
         "hobbyPic":"cooking_2.jpg"
     },
     "Travel": {
         "title":"Travelling",
-        "subheading":"Travel SubHeading",
-        "text":"Travel Text Here",
+        "subheading":"I get around so much you might think I am a Boeing 737",
+        "text":"It is an expensive hobby but I love travelling to new places. Just going around the world and seeing how people do things there has always interested me. Coming from a small rural farming community, I like to see the bigger picture and get a grasp on how things function around the globe. I have been to roughly 44 of the 50 states in the US (Alaska is on my bucket list). As for over seas, I have been to Italy and Greece. Some places I really want to go in the future are Japan, Iceland, Norway, and Germany. Fun Fact: I actually took both photos for the travel section, one is from the Vatican in Italy and the other is from a place called Limani Nafpliou in Greece",
         "hobbyPic":"travel_2.jpg"
     },
     "Games": {
         "title":"Video Games",
-        "subheading":"Games SubHeading Here",
-        "text":"Games Text Here",
+        "subheading":"Yea, I like Video Games",
+        "text":"Ever since I got my first gaming console back in probably around 2008 or 2009, my brother and I have been hooked. I would say that most of my free time goes towards video games. Not as expensive as travelling, but it can still get a bit pricy if you buy a lot of games. I own hundreds of games and I plan to grow my collection even more as long as I live. My favorite game has to be Super Mario Galaxy as it is just a classic and I can play it forever.",
         "hobbyPic":"games_2.jpg"
     }
   }
