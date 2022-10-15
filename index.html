@@ -15,13 +15,9 @@
 <!--
     Hi Trevor
 
-    Here is my code for the assignment. I know it doesn't work exactly as you wanted but I put a lot of work in it and I honestly couldn't figure 
-    out how to get the corrent info to show up properly on a click
+    Here is my code, It doesn't work exactly as you wanted as I couldn't figure out how to get the text to show but I was very close I believe (probably not)
 
-    That being said, techinically it does work. Data is grabbed from the json file and it is injected into the lightbox on a click. The issue is just that you cant see it because it is
-    out of frame and it shows all 3 sections each time
-
-    Anyway, I hope you can see all the branches and changes I made trying to work on it and get somewhat where my thought process was.
+    ANyway, I hope you can see all my branches and thought process through the build
 
     Thanks
 -->
@@ -34,37 +30,29 @@
             <h2> By: Matt Tenuta </h2>
         </section>
 
-     <section>
-            <img id="Cooking" class="getHobby" type="image" name="cooking_1" src="/images/cooking_1.jpg">
-            <img id="Travel" class="getHobby2" type="image" name="travel_1" src="/images/travel_1.jpg">
-            <img id="Games" class="getHobby" type="image" name="games_1" src="/images/games_1.jpg">
-        </section>
+        <div class="row">
+            <div class="column">
+                <img id="Cooking" class="getHobby" type="image" name="cooking_1" src="/images/cooking_1.jpg">
+            </div>
+            <div class="column">
+                <img id="Travel" class="getHobby" type="image" name="travel_1" src="/images/travel_1.jpg">
+            </div>
+            <div class="column">
+                <img id="Games" class="getHobby" type="image" name="games_1" src="/images/games_1.jpg">
+            </div>
+        </div>
 
 
        <div class="lightbox">
-            <section id="team-section" class>
-                <div class="lightbox-posi">
-            <img src="" alt="pic of hobby">
+            <img>
             <h1></h1>
             <h2></h2>
             <p></p>
-            </div>
-            </section>
         </div>
 
-    </main>
+        <div class="extend"></div>
 
-    <!-- templates dont get rendered, but their content will be -->
-    <template id="user-template">
-        <section>
-            <div> <!-- container 0 -->
-                <img src="" alt="hobby image">
-            </div>
-            <h2></h2>
-            <h2></h2>
-            <p></p>
-        </section>
-    </template>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="js/main.js" defer type="module"></script>

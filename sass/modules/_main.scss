@@ -40,21 +40,35 @@ main {
         padding: .5em;
     }
 
-    section img {
-        width: 1506px;
-        height: 550px;
+    img {
+        width: 550px;
+        height: 400px;
         display: flex;
         margin: auto;
-        justify-content: center;
         padding: 1em;
     
         &:hover {
             cursor: pointer;
             border-radius: 3em;
-            opacity: 50%;
+            opacity: 40%;
         }
     }
 
+    .extend {
+        height: 400px;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 
     .lightbox {
         display: none;
