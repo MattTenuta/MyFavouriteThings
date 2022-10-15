@@ -11,11 +11,6 @@ import { getData } from "./modules/dataMiner.js";
         duration: 5
     })
 
-    gsap.from(".getHobby2", { 
-        x: 2000,
-        duration: 5
-    })
-
     gsap.from(".header", {
         y: -200,
         duration: 2
@@ -23,9 +18,7 @@ import { getData } from "./modules/dataMiner.js";
 
 
     
-    let theTemplate = document.querySelector("#user-template").content,
-        theThings = document.querySelector("#team-section"),
-        faveData,
+    let faveData,
         lightbox = document.querySelector(".lightbox"),
         cookImg = document.querySelector("#Cooking"),
         vacaImg = document.querySelector("#Travel"),
@@ -36,61 +29,28 @@ import { getData } from "./modules/dataMiner.js";
         debugger;
 
         faveData = data;
-
-        const things = Object.keys(data);
-        
-        things.forEach(thing =>{
-
-            let panel = theTemplate.cloneNode(true);
-
-            let containers = panel.firstElementChild.children;
-
-            let thePicture =  containers[0].querySelector('img');
-
-                thePicture.src = `images/${data[thing].hobbyPic}`;
-
-
-                thePicture.id = thing;
-                thePicture.addEventListener('click', showThing);
-
-                containers[1].textContent = data[thing].title;
-                containers[2].textContent = data[thing].subheading;
-                containers[3].textContent = data[thing].text;
-
-
-                theThings.appendChild(panel);
-                
-        })
     }
-
-   // function childChecker() {
-    //    if(lightbox.classList > 1) {
-     //       lightbox.classList.remove("show-lightbox");
-      //  }
-   // }
 
     function removeLightbox() {
         lightbox.classList.remove("show-lightbox");
     }
-
-   // function showBox() {
-     //   childChecker();
-
-     //   lightbox.classList.add("show-lightbox");
-    //}
 
     function showThing() {
         debugger;
 
         let currentThing = faveData[this.id];
 
-       // These below are my attempts at getting the data to show up on a click, all have failed and im out of ideas
+        let hobbyIMG = lightbox.querySelector('img'),
+            headText = lightbox.querySelector('h1'),
+            subheadText = lightbox.querySelector('h2'),
+            paraText = lightbox.querySelector('p')
 
-       // hobbyIMG = lightbox.getElementsByClassName("IMG")[this.id];
-       // headText = lightbox.getElementsByClassName("head")[this.id];
+        hobbyIMG.src = `images/${currentThing.hobbyPic}`
+        headText.textContent = currentThing.title;
+        subheadText.textContent = currentThing.subheading;
+        paraText.textContent = currentThing.text;
 
-       // headText.append(currentThing);
-       // hobbyIMG.src = `images/${currentThing.hobbyPic}`
+        debugger;
 
         lightbox.classList.add("show-lightbox");
 
