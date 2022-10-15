@@ -5,10 +5,28 @@ import { getData } from "./modules/dataMiner.js";
     console.log('fired');
 
     
+    // GreenSock Animations
+    gsap.from(".getHobby", { 
+        x: -2000,
+        duration: 5
+    })
+
+    gsap.from(".getHobby2", { 
+        x: 2000,
+        duration: 5
+    })
+
+    gsap.from(".header", {
+        y: -200,
+        duration: 2
+    })
+
+
+    
     let theTemplate = document.querySelector("#user-template").content,
         theThings = document.querySelector("#team-section"),
         faveData,
-        lightbox = document.querySelector("#lightbox"),
+        lightbox = document.querySelector(".lightbox"),
         cookImg = document.querySelector("#Cooking"),
         vacaImg = document.querySelector("#Travel"),
         gamerImg = document.querySelector("#Games");
@@ -27,11 +45,13 @@ import { getData } from "./modules/dataMiner.js";
 
             let containers = panel.firstElementChild.children;
 
-                containers[0].querySelector('img').src = `images/${data[thing].hobbyPic}`;
+            let thePicture =  containers[0].querySelector('img');
+
+                thePicture.src = `images/${data[thing].hobbyPic}`;
 
 
-                containers[0].querySelector('img').id = thing;
-                containers[0].querySelector('img').addEventListener('click', showThing);
+                thePicture.id = thing;
+                thePicture.addEventListener('click', showThing);
 
                 containers[1].textContent = data[thing].title;
                 containers[2].textContent = data[thing].subheading;
@@ -49,9 +69,9 @@ import { getData } from "./modules/dataMiner.js";
       //  }
    // }
 
-   // function removeLightbox() {
-     //   lightbox.classList.remove("show-lightbox");
-   // }
+    function removeLightbox() {
+        lightbox.classList.remove("show-lightbox");
+    }
 
    // function showBox() {
      //   childChecker();
@@ -64,13 +84,17 @@ import { getData } from "./modules/dataMiner.js";
 
         let currentThing = faveData[this.id];
 
-        hobbyIMG = lightbox.getElementsByClassName("IMG")[this.id];
-        headText = lightbox.getElementsByClassName("head")[this.id];
+       // These below are my attempts at getting the data to show up on a click, all have failed and im out of ideas
 
-        headText.append(currentThing);
-        hobbyIMG.src = `images/${currentThing.hobbyPic}`
+       // hobbyIMG = lightbox.getElementsByClassName("IMG")[this.id];
+       // headText = lightbox.getElementsByClassName("head")[this.id];
+
+       // headText.append(currentThing);
+       // hobbyIMG.src = `images/${currentThing.hobbyPic}`
 
         lightbox.classList.add("show-lightbox");
+
+        lightbox.addEventListener("click", removeLightbox);
 
     }
 
